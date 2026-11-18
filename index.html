@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <title>Game Center</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="description" content="Free browser games for phone and desktop: Fruit Plop, Randomino, Titan Hop and Hero Hop.">
+<meta name="description" content="Free browser games for phone and desktop: Fruit Plop, Randomino and Titan Hop.">
 <meta name="theme-color" content="#14112a">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='3' y='3' width='12' height='12' rx='2' fill='%23ff3ea5'/%3E%3Crect x='17' y='3' width='12' height='12' rx='2' fill='%232de2ff'/%3E%3Crect x='3' y='17' width='12' height='12' rx='2' fill='%23ffd23f'/%3E%3Ccircle cx='23' cy='23' r='6.5' fill='%23ff9d2b'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -148,40 +148,6 @@ h1 {
 .titan .title span { color: #e0533e; }
 .titan .play { background: linear-gradient(#c84a37, #b5402f); color: #fff; box-shadow: 0 4px 0 #842a1e; }
 
-/* World picker (Titan Hop card asks which version to play) */
-.picker {
-  width: min(92vw, 420px); padding: 0; border: 1px solid var(--line); border-radius: 24px;
-  background: var(--bg-2); color: var(--ink);
-  box-shadow: 0 24px 60px rgba(0,0,0,.55);
-}
-.picker::backdrop { background: rgba(8, 6, 20, .7); }
-.picker[open] { animation: pop .22s cubic-bezier(.3,1.4,.6,1); }
-.picker .in { padding: 22px 20px 18px; display: grid; gap: 14px; }
-.picker h2 { margin: 0; text-align: center; font-family: var(--font-fun); font-weight: 700; font-size: 26px; }
-.picker .worlds { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-.world {
-  display: flex; flex-direction: column; border-radius: 18px; overflow: hidden;
-  text-decoration: none; color: inherit; border: 1px solid var(--line); background: rgba(255,255,255,.04);
-  transition: transform .15s, border-color .15s;
-}
-.world:hover { transform: translateY(-3px); border-color: rgba(255,255,255,.3); }
-.world:active { transform: scale(.98); }
-.world:focus-visible { outline: 3px solid #fff; outline-offset: 3px; }
-.world svg { display: block; width: 100%; height: auto; }
-.world b {
-  display: block; padding: 10px 8px 2px; text-align: center;
-  font-family: "Oswald", "Arial Narrow", sans-serif; font-weight: 700; font-size: 21px; text-transform: uppercase; letter-spacing: .02em;
-}
-.world.t b span { color: #e0533e; }
-.world.k b span { color: #f2c14e; }
-.world small { display: block; padding: 0 8px 12px; text-align: center; color: var(--dim); font-size: 13px; line-height: 1.35; }
-.picker .close {
-  justify-self: center; border: 0; background: none; color: var(--dim);
-  font: 500 15px var(--font-ui); padding: 6px 14px; cursor: pointer;
-}
-.picker .close:hover { color: var(--ink); text-decoration: underline; }
-@keyframes pop { from { transform: scale(.85); opacity: 0; } }
-
 /* Coming soon slot */
 .soon {
   border: 2px dashed var(--line);
@@ -271,7 +237,7 @@ footer a { color: var(--ink); }
       </div>
     </a>
 
-    <a class="game titan" href="https://csawyer54.github.io/titan-hop/" id="titanCard" aria-haspopup="dialog">
+    <a class="game titan" href="https://csawyer54.github.io/titan-hop/">
       <div class="art">
         <svg viewBox="0 0 320 200" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
           <!-- giant peeking over the wall -->
@@ -291,9 +257,9 @@ footer a { color: var(--ink); }
         <p class="title">Titan <span>Hop</span></p>
       </div>
       <div class="info">
-        <div class="tags"><span>Endless hopper</span><span>2 worlds</span><span>Tap &amp; swipe</span></div>
-        <p>Hop across roads, rivers and danger lanes, and keep moving: something huge is right behind you. Pick your world: dodge giants in Titan Hop, or ogres and a dragon in Hero Hop.</p>
-        <span class="play">Pick a world <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        <div class="tags"><span>Endless hopper</span><span>Giants</span><span>Tap &amp; swipe</span></div>
+        <p>Hop across roads, rivers and cannon lanes while giants stomp past. Grab gas canisters to grapple over the walls, and keep moving. Something huge is right behind you.</p>
+        <span class="play">Play Titan Hop <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
       </div>
     </a>
 
@@ -302,61 +268,5 @@ footer a { color: var(--ink); }
 
   <footer>Source on <a href="https://github.com/CSawyer54">GitHub</a></footer>
 </div>
-
-<dialog class="picker" id="worldPicker" aria-labelledby="pickTitle">
-  <div class="in">
-    <h2 id="pickTitle">Pick your world</h2>
-    <div class="worlds">
-      <a class="world t" href="https://csawyer54.github.io/titan-hop/">
-        <svg viewBox="0 0 160 100" aria-hidden="true">
-          <rect width="160" height="100" fill="#cfd8c4"/>
-          <ellipse cx="112" cy="44" rx="17" ry="19" fill="#d6a07c"/><path d="M95 41a17 17 0 0 1 34 0q-17-8-34 0z" fill="#3b2a20"/>
-          <ellipse cx="105" cy="44" rx="3.5" ry="3" fill="#fbf7ee"/><ellipse cx="119" cy="44" rx="3.5" ry="3" fill="#fbf7ee"/><circle cx="105.5" cy="44.5" r="1.4" fill="#1d1a16"/><circle cx="119.5" cy="44.5" r="1.4" fill="#1d1a16"/>
-          <path d="M103 52q9 8 18 0q-9 3-18 0z" fill="#4a1d18"/>
-          <rect x="0" y="60" width="160" height="6" fill="#bdb5a3"/>
-          <g fill="#b3ab99"><rect x="4" y="54" width="9" height="7"/><rect x="22" y="54" width="9" height="7"/><rect x="40" y="54" width="9" height="7"/><rect x="58" y="54" width="9" height="7"/><rect x="76" y="54" width="9" height="7"/><rect x="94" y="54" width="9" height="7"/><rect x="130" y="54" width="9" height="7"/><rect x="148" y="54" width="9" height="7"/></g>
-          <rect x="0" y="66" width="160" height="16" fill="#a49c8b"/>
-          <rect x="0" y="82" width="160" height="18" fill="#7a9a4c"/>
-          <g><rect x="40" y="80" width="8" height="7" fill="#ebe5d8"/><path d="M38 71h12l2 11h-16z" fill="#3f6b46"/><circle cx="44" cy="68" r="4" fill="#3a2a1e"/></g>
-        </svg>
-        <b>Titan <span>Hop</span></b>
-        <small>Giants, cannons and gas-powered grapples</small>
-      </a>
-      <a class="world k" href="https://csawyer54.github.io/titan-hop/?world=kingdom">
-        <svg viewBox="0 0 160 100" aria-hidden="true">
-          <rect width="160" height="100" fill="#cfdcef"/>
-          <path d="M96 30q-6-14-14-18q12 2 18 14z" fill="#e8dcc0"/><path d="M128 30q6-14 14-18q-12 2-18 14z" fill="#e8dcc0"/>
-          <ellipse cx="112" cy="44" rx="18" ry="18" fill="#9b3328"/><ellipse cx="112" cy="53" rx="13" ry="9" fill="#a9412f"/>
-          <ellipse cx="104" cy="41" rx="4" ry="2.6" fill="#ffd23a"/><ellipse cx="120" cy="41" rx="4" ry="2.6" fill="#ffd23a"/><rect x="103.5" y="38.5" width="1.2" height="5" fill="#1d1a16"/><rect x="119.5" y="38.5" width="1.2" height="5" fill="#1d1a16"/>
-          <rect x="0" y="60" width="160" height="6" fill="#b3bac3"/>
-          <g fill="#a8b0ba"><rect x="4" y="54" width="9" height="7"/><rect x="22" y="54" width="9" height="7"/><rect x="40" y="54" width="9" height="7"/><rect x="58" y="54" width="9" height="7"/><rect x="76" y="54" width="9" height="7"/><rect x="94" y="54" width="9" height="7"/><rect x="130" y="54" width="9" height="7"/><rect x="148" y="54" width="9" height="7"/></g>
-          <rect x="0" y="66" width="160" height="16" fill="#98a0aa"/>
-          <path d="M12 66h10v12l-5-3-5 3z" fill="#2b4f8a"/><path d="M140 66h10v12l-5-3-5 3z" fill="#2b4f8a"/>
-          <rect x="0" y="82" width="160" height="18" fill="#83ad4f"/>
-          <g><path d="M36 71h16l3 12h-22z" fill="#b03a2e"/><rect x="38" y="78" width="12" height="6" fill="#3d6fb6"/><circle cx="44" cy="68" r="4" fill="#7a4b26"/><circle cx="44" cy="76" r="4" fill="#8a5a33" stroke="#c9d2d6" stroke-width="1"/></g>
-          <path d="M70 92q-2-10 8-14q-1 9-8 14z" fill="#fffaf0"/><path d="M70 92l7-13" stroke="#b8892c" stroke-width="1"/>
-        </svg>
-        <b>Hero <span>Hop</span></b>
-        <small>Ogres, knights and a dragon on your tail</small>
-      </a>
-    </div>
-    <button class="close" id="pickClose" type="button">Cancel</button>
-  </div>
-</dialog>
-
-<script>
-// The Titan Hop card asks which world to play. Without dialog support it just opens Titan Hop.
-(() => {
-  const card = document.getElementById('titanCard'), dlg = document.getElementById('worldPicker');
-  if (!card || !dlg || typeof dlg.showModal !== 'function') return;
-  card.addEventListener('click', e => {
-    if (e.metaKey || e.ctrlKey || e.shiftKey || e.button > 0) return;   // let "open in new tab" through
-    e.preventDefault();
-    dlg.showModal();
-  });
-  document.getElementById('pickClose').addEventListener('click', () => dlg.close());
-  dlg.addEventListener('click', e => { if (e.target === dlg) dlg.close(); });   // tap outside to cancel
-})();
-</script>
 </body>
 </html>
